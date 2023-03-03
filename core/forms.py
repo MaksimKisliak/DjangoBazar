@@ -4,6 +4,9 @@ from django.contrib.auth.models import User
 
 
 class LoginForm(AuthenticationForm):
+    """
+    A form for logging in existing users.
+    """
     username = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'Your username',
         'class': 'w-full py-4 px-6 rounded-xl'
@@ -15,6 +18,9 @@ class LoginForm(AuthenticationForm):
 
 
 class SignupForm(UserCreationForm):
+    """
+    A form for creating new users.
+    """
     class Meta:
         model = User
         fields = ('username', 'email', 'password1', 'password2')
